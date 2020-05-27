@@ -10,6 +10,17 @@ client = gspread.authorize(creds)
 # Find a workbook by name and open the first sheet
 # Make sure you use the right name here.
 sheet = client.open("Doc_1_Sheet").sheet1
+
 # Extract and print all of the values
-list_of_hashes = sheet.get_all_values()
-print(list_of_hashes)
+
+cell = sheet.find("shiva")
+row=str(cell.row)
+col=str(cell.col)
+
+value = cell.value
+med=sheet.cell(6, 2).value
+print(med)
+
+#sheet.update('B6', 80)
+
+
